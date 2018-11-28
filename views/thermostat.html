@@ -6,20 +6,22 @@
     <script src="./src/Thermostat.js" type="text/javascript"></script>
   </head>
   <body>
-
-    <button id="temperature-up">Turn Up</button> &nbsp &nbsp<button id="temperature-down">Turn Down</button>
+    <section>
+    <h1 id="temperature">Current Temperature</h1>
     <br>
-    <div id="temperature"> view temp
-    </div>
-    <h1>Power Saving Mode</h1>
+    <button id="temperature-up">+</button> &nbsp &nbsp<button id="temperature-down">-</button>
+    <br>
+    <h2>Power Saving Mode</h2>
     <button id="powersaving-On">On</button>
     &nbsp &nbsp<button id="powersaving-Off">Off</button>
     <br>
-    <h1>Energy Usage></h1>
+    power saving mode is <span id="power-saving-status">on</span>
+    <br>
+    <h2>Energy Usage</h2>
     <div id="energy_usage">low/med/high</div>
     <br>
     <button id="reset">Reset</button>
 
-
+  </section>
   </body>
 </html>
