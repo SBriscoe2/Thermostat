@@ -10,7 +10,7 @@ $(document).ready(function() {
       if (thermo.energyUsage() === "low-usage"){
           $('#energy-usage').css('backgroundColor', 'green');
       } else if (thermo.energyUsage() === "medium-usage"){
-          $('#energy-usage').css('backgroundColor', 'yellow');
+          $('#energy-usage').css('backgroundColor', 'black');
       } else if (thermo.energyUsage() === "high-usage"){
           $('#energy-usage').css('backgroundColor', 'red');
       }
@@ -56,19 +56,27 @@ $(document).ready(function() {
       console.log(data); });
     });
 
+    displayWeather('London');
+
+    $('#select-city').submit(function(event) {
+    event.preventDefault();
+    var city = $('#current-city').val();
+    displayWeather(city);
+    })
+
     function displayWeather(city) {
-    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+    var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city;
     var token = '&appid=1247251ef7128ea10967b9340efaf87d';
     var units = '&units=metric';
     $.get(url + token + units, function(data) {
       $('#city-temperature').text(data.main.temp);
     }
   )};
-  displayWeather('London');
 
-$('#select-city').submit(function(event) {
-  event.preventDefault();
-  var city = $('#current-city').val();
-  displayWeather(city);
-})
+   // $('#city').val(function(){
+   //  displayWeather(city);
+   // };
+    $.get(server linked to db), retrieves last known temperature
+    $.post store last known temperature 
+
 });

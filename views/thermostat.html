@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Thermostat</title>
     <script src="../lib/Jquery/jQuery.js"></script>
     <script src="../src/Thermostat.js" type="text/javascript"></script>
     <script src="../src/Runner.js" type="text/javascript"></script>
+      <style>
+      body {
+        background-color: Royalblue;
+      }
+      h1 {
+        font-size: 200px;
+      }
+      .vertical-text {
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+  float: right;
+  font-size: 100px
+}
+
+      .button {
+    background-color: orange; /* Green */
+    border: none;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 4px;
+    cursor: pointer;
+    align: center;
+}
+
+.button1 {border-radius: 50%;}
+.button2 {border-radius: 50%;}
+.button3 {border-radius: 12px;}
+
+
+      </style>
   </head>
   <body>
     <section>
-    <h1 id="temperature">Current Temperature</h1>
-    <h1 id="current-temperature">Temp0</h1>
+      <h3 class="vertical-text">Degrees</h3>
+    <h2 align="center" id="temperature">It is currently </h2>
+    <h1 align="center" id="current-temperature">Temp0</h1>
+    <div align="center">
+    <h2> Temperature Controls
+      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    Power saving mode is <span id="power-saving-status">on</span></h2>
+    <button class="button button1" align="center" id="temperature-up">+</button> &nbsp &nbsp
+    <button class="button button2" align="center" id="temperature-down">-</button> &nbsp &nbsp
+    <button class="button button3" align="center" id="reset">Reset</button>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <button class="button button1" id="powersaving-on">On</button>&nbsp &nbsp
+    <button class="button button1" id="powersaving-off">Off</button>
+    <button class="button button3" id="energy-usage">Energy Usage</button>
+    </div>
+    </div>
     <br>
-    <button id="temperature-up">+</button> &nbsp &nbsp<button id="temperature-down">-</button>
-    <br>
-    <h2>Power Saving Mode</h2>
-    <button id="powersaving-on">On</button>
-    &nbsp &nbsp<button id="powersaving-off">Off</button>
-    <br>
-    power saving mode is <span id="power-saving-status">on</span>
-    <br>
-    <h2>Energy Usage</h2>
-    <div id="energy-usage" style="width: 100px; height: 100px;"></div>
-    <br>
-    <button id="reset">Reset</button>
+    <hr>
     <br>
     <button id="weather">Weather</button>
+    <h2> The current temperature in London is <span id="city">20</span> degrees.</h2>
+
     <br>
-    <h1> Enter a city of you choice </h1>
+    <h2>The current temperature in  ? is <span id="city-temperature">20</span> degrees.</h2><br>
+    <p> Enter a city of you choice </p>
      <form id="select-city">
         <input id="current-city" type="text" placeholder="Enter a city"></input>
         <input type="submit"></input>
       </form>
-      <h1>The current temperature is <span id="city-temperature">20</span> degrees.</h1>
-
     </section>
   </body>
 </html>
